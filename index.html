@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Astronauta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        
+        <section class="container">
+
+            <div class="img_content">
+                <img id="capaMusica" class="img" src="Imagens/astronauta.png" alt="Astronauta">
+            </div>
+
+        <div class="Audio">
+           <iframe id="playerSoundcloud" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/302531356&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div>
+        </section>
+    </main>
+   <!-- Codigo gerado por IA, ainda nao inicei os estudos em JS -->
+
+     <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script>
+        
+        alert('Toque na imagem flutuante') // unica coisa que sei fazer kkkk, por agora!
+
+        var widget; // Variável para o widget do SoundCloud
+        var isPlaying = false; // Estado atual da reprodução
+
+        window.onload = function() {
+            var iframeElement = document.getElementById('playerSoundcloud');
+            var capaMusica = document.getElementById('capaMusica');
+
+            // Inicializa o widget do SoundCloud
+            widget = SC.Widget(iframeElement);
+
+            // Quando o widget estiver pronto, defina o volume
+            widget.bind(SC.Widget.Events.READY, function() {
+                widget.setVolume(30); // Define o volume para 30% (0.3)
+                console.log("Player do SoundCloud pronto e volume definido para 30%.");
+            });
+
+            // Adiciona o evento de clique na imagem
+            capaMusica.addEventListener('click', function() {
+                if (isPlaying) {
+                    widget.pause();
+                    isPlaying = false;
+                    console.log("Música pausada.");
+                } else {
+                    widget.play();
+                    isPlaying = true;
+                    console.log("Música tocando.");
+                }
+            });
+        };
+    </script>
+</body>
+</html>
