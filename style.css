@@ -18,9 +18,6 @@ body{
     max-width: 300px;
     width: 100%;
 }
-iframe{
-    display: none;
-}
 /* imagem flutuante*/
 .img{
     animation: flutuar 10s ease-in-out infinite;
